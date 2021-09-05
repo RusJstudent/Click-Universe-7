@@ -42,7 +42,6 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    align-content: space-around;
     height: 100%;
 }
 
