@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Universe</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="menu__content">
+            <div class="menu__section menu__shop">
+                <div class="shop__items">
+                    <div class="shop__item">
+                        <img src="images/equipment/lg1.png" width="40" height="40" alt="laser gun 1">
+                        <div class="shop__buttons">
+                            <button class="shop__button shop__buy" data-btc="25e3" data-name="lg1">25k btc</button>
+                            <button class="shop__button shop__sell" data-name="lg1"><img src="images/icons/remove-icon.jpg"></button>
+                        </div>
+                    </div>
+                    <div class="shop__item">
+                        <img src="images/equipment/lg2.png" width="40" height="40" alt="laser gun 2">
+                        <div class="shop__buttons">
+                            <button class="shop__button shop__buy" data-btc="270e3" data-name="lg2">270k btc</button>
+                            <button class="shop__button shop__sell" data-name="lg2"><img src="images/icons/remove-icon.jpg"></button>
+                        </div>
+                    </div>
+                    <div class="shop__item">
+                        <img src="images/equipment/lg3.png" width="40" height="40" alt="laser gun 3">
+                        <div class="shop__buttons">
+                            <button class="shop__button shop__buy" data-plt="10e3" data-name="lg3">10k plt</button>
+                            <button class="shop__button shop__sell" data-name="lg3"><img src="images/icons/remove-icon.jpg"></button>
+                        </div>
+                    </div>
+                    <div class="shop__item">
+                        <img src="images/equipment/db1.png" width="40" height="40" alt="shield 1">
+                        <div class="shop__buttons">
+                            <button class="shop__button shop__buy" data-btc="45e3" data-name="db1">45k btc</button>
+                            <button class="shop__button shop__sell" data-name="db1"><img src="images/icons/remove-icon.jpg"></button>
+                        </div>
+                    </div>
+                    <div class="shop__item">
+                        <img src="images/equipment/db2.png" width="40" height="40" alt="shield 2">
+                        <div class="shop__buttons">
+                            <button class="shop__button shop__buy" data-btc="600e3" data-name="db2">600k btc</button>
+                            <button class="shop__button shop__sell" data-name="db2"><img src="images/icons/remove-icon.jpg"></button>
+                        </div>
+                    </div>
+                    <div class="shop__item">
+                        <img src="images/equipment/db3.png" width="40" height="40" alt="shield 3">
+                        <div class="shop__buttons">
+                            <button class="shop__button shop__buy" data-plt="25e3" data-name="db3">25k plt</button>
+                            <button class="shop__button shop__sell" data-name="db3"><img src="images/icons/remove-icon.jpg"></button>
+                        </div>
+                    </div>
+                    <div class="shop__item">
+                        <img src="images/equipment/drone.png" width="40" height="40" alt="drone">
+                        <div class="shop__buttons">
+                            <button class="shop__button shop__buy" data-name="drone"></button>
+                        </div>
+                    </div>
+                    <div class="shop__item">
+                        <img src="images/icons/upgrade_arrow.jpg" width="40" height="40" alt="ship upgrade">
+                        <div class="shop__buttons">
+                            <button class="shop__button shop__buy" data-name="ship"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__section menu__info">
+                <div class="info__destroys">
+                    <button id="info__destroys">Destroys</button>
+                </div>
+    
+                <div class="info__how">
+                    <button id="info__how">How to play</button>
+                </div>
+        
+                <div class="info__about">
+                    <button id="info__about">Game about</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu__nav">
+            <div class="menu__nav-container">
+                <div class="menu__nav-content">
+                    <div class="menu__nav-elem menu__nav-shop">
+                        <div class="menu__nav-elem-text">Shop</div>
+                    </div>
+                    <!-- <div class="menu__nav-elem menu__nav-equip">
+                        <div class="menu__nav-elem-text">Equipment</div>
+                    </div>
+                    <div class="menu__nav-elem menu__nav-promo">
+                        <div class="menu__nav-elem-text">Promo</div>
+                    </div> -->
+                    <div class="menu__nav-elem menu__nav-info">
+                        <div class="menu__nav-elem-text">Info</div>
+                    </div>
+                    <!-- <div class="menu__nav-elem menu__nav-settings">
+                        <div class="menu__nav-elem-text">Settings</div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="menu__quit menu__nav-quit">
+                <div class="menu__nav-elem-text">Quit</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <div class="profile">
+            <div class="profile__elem">
+                <span class="stats">exp</span>
+                <span class="profile__value profile__exp"></span>
+            </div>
+            <div class="profile__elem">
+                <span class="stats">btc</span>
+                <span class="profile__value profile__btc"></span>
+            </div>
+            <div class="profile__elem">
+                <span class="stats">lvl</span>
+                <span class="profile__value profile__lvl"></span>
+            </div>
+            <div class="profile__elem">
+                <span class="stats">plt</span>
+                <span class="profile__value profile__plt"></span>
+            </div>
+            <div class="profile__elem">
+                <span class="stats">dmg</span>
+                <span class="profile__value profile__dmg"></span>
+            </div>
+            <div class="profile__elem">
+                <span class="stats">rank</span>
+                <span class="profile__value profile__rnk"></span>
+            </div>
+        </div>
+
+        <div class="ship-wrapper">
+            <div class="ship">
+
+                <div class="ship__damage-container">
+                    <div class="ship__damage ship__damage-animation"></div>
+                </div>
+
+                <div class="ship__above">
+                    <div class="ship__hp">
+                        <div class="ship__hp-line"></div>
+                    </div>
+                    <div class="ship__hp">
+                        <div class="ship__sh-line"></div>
+                    </div>
+                </div>
+
+                <div class="ship__image">
+                    <img src="images/ships/hyper-j.png" alt="ship">
+                </div>
+
+                <div class="ship__below">
+                    <div class="ship__rank">
+                        <div id="ranks" class="rank1"></div>
+                    </div>
+                    <div class="ship__warrank">
+                        <!-- <img src="images/icons/warranks/wr_1.png" alt="war-rank 1">
+                        <img src="images/icons/warranks/wr_2.png" alt="war-rank 2">
+                        <img src="images/icons/warranks/wr_3.png" alt="war-rank 3">
+                        <img src="images/icons/warranks/wr_4.png" alt="war-rank 4"> -->
+                    </div>
+                    <div class="ship__nickname"></div>
+                </div>
+
+                <div class="ship__bottom">
+                    <div class="hitpoints"><span id="hp_value"></span> / <span id="hp_max"></span></div>
+                    <div class="hitpoints"><span id="sh_value"></span> / <span id="sh_max"></span></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="pve">
+            <div class="pve__container">
+                <div class="pve__description">
+                    <div class="pve__description-text">PvE</div>
+                </div>
+                <div class="pve__row">
+                    <div class="pve__enemies">
+                        <div class="pve__enemy">
+                            <button data-enemy="hydro">Hydro</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="jenta">Jenta</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="mali">Mali</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="plarion">Plarion</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="motron">Motron</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="xeon">Xeon</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="bangoliour">Bangoliour</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="zavientos">Zavientos</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="magmius">Magmius</button>
+                        </div>
+                        <div class="pve__enemy">
+                            <button data-enemy="quattroid">Quattroid</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="info__equipment">
+                <button id="info__equipment">Equipment</button>
+            </div>
+        </div>
+
+        <div class="auto">
+            <button class="auto__button auto__button-off">Auto</button>
+        </div>
+
+        <div class="wrapper__menu-button"></div>
+    </div>
+</body>
+
+</html>

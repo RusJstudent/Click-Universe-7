@@ -1,0 +1,589 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+    z-index: -1;
+    overflow: hidden;
+
+    font-size: 15px;
+    font-family: sans-serif;
+
+    cursor: default;
+
+    touch-action: none;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+
+    font-family: 'Azeret Mono', monospace;
+}
+
+.wrapper {
+    height: 100vh;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* shop */
+
+.menu__shop button:hover {
+    background-color:rgba(255, 177, 8)
+}
+
+.shop__items {
+    font-size: 25px;
+    padding: 0 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: space-around;
+    height: 100%;
+}
+
+.shop__item {
+    min-width: 45%;
+}
+
+.shop__buttons {
+    position: relative;
+    top: -14px;
+    display: inline-block;
+}
+
+.shop__button {
+    position: relative;
+}
+
+.shop__buy {
+    padding: 2px;
+}
+
+.shop__sell {
+    top: 3px;
+}
+
+
+/* menu */
+
+.wrapper__menu-button {
+    width: 76px;
+    height: 76px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 100%;
+    margin-top: -76px;
+    margin-left: -38px;
+    background: url('../images/icons/menu.svg') no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu {
+    position: fixed;
+    width: 62vw;
+    height: 62vh;
+    background: rgba(0, 0, 0, 0.7);
+    left: 50%;
+    top: 50%;
+    margin-left: -31vw;
+    margin-top: -31vh;
+    z-index: 100;
+
+    font-size: 2.5vw;
+    letter-spacing: -0.07vw;
+    color: white;
+    font-family: 'Times New Roman', Times, sans-serif;
+
+    grid-template-columns: 2fr 11fr;
+    grid-template-areas: "nav content";
+    display: none;
+}
+
+.menu__content {
+    grid-area: content;
+    overflow: auto;
+    position: relative;
+}
+
+.menu__section {
+    position: absolute;
+}
+
+.menu__shop {
+    height: 100%;
+}
+
+.menu__info {
+    display: none;
+    padding-left: 40px;
+    flex-direction: column;
+}
+
+.menu__nav {
+    grid-area: nav;
+    background-color: rgb(21, 27, 49);
+    font-family: 'Pathway Gothic One', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu__nav-container {
+    flex: 1 1 auto;
+}
+
+.menu__nav-content {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu__nav-elem {
+    background: linear-gradient(to right bottom, rgb(56, 56, 104) 50%, #660074 70%);
+    border-top: 0.3vh groove rgb(255, 194, 82);
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 2px 0 3px black;
+}
+
+.menu__nav-elem:hover {
+    background: linear-gradient(to right bottom, rgb(255, 38, 0) 50%, #660074 70%);
+}
+
+.menu__nav-elem:first-child {
+    border: none;
+}
+
+.menu__quit {
+    background: rgb(16, 16, 53);
+    cursor: pointer;
+    text-align: center;
+}
+
+.menu__quit:hover {
+    background-color: rgb(0, 40, 73);
+}
+
+
+.menu__nav-elem-text {
+    text-align: center;
+}
+
+
+/* profile */
+
+.profile {
+    width: 400px;
+    background-color: rgba(110, 110, 255, 0.1);
+    position: relative;
+    left: 100%;
+    margin-left: -400px;
+    margin-bottom: 10px;
+    z-index: 100;
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 2px;
+    z-index: -1;
+}
+
+.profile__elem {
+    width: 50%;
+    margin: 0.1em 0;
+}
+
+.profile__value {
+    position: relative;
+    left: -3px;
+}
+
+.profile__rnk {
+    letter-spacing: -0.05em;
+}
+
+.stats {
+    color: rgb(92, 92, 233);
+    font-size: 1.25em;
+}
+
+
+/* ship */
+
+.ship {
+    font-family: Arial, Helvetica;
+}
+
+.ship-wrapper {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ship__above {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    top: -18px;
+}
+
+.ship__damage {
+    position: absolute;
+    color: rgb(204, 151, 5);
+    letter-spacing: 0.1em;
+    top: 50%;
+    left: 50%;
+    margin-top: -3.6em;
+    margin-left: 1.4em;
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: bold;
+    z-index: 10;
+    transition: ease 0.5s;
+    opacity: 0;
+    animation-name: damage;
+    animation-duration: 1.5s;
+    text-shadow: 0.15em 0 0.15em #000, 
+    0 0.15em 0.15em #000, 
+    -0.15em 0 0.15em #000, 
+    0 -0.15em 0.15em #000;
+}
+
+.ship__repair {
+    color: rgb(0, 107, 27);
+}
+
+@keyframes damage {
+    from {
+        opacity: 100%;
+    }
+
+    60% {
+        margin-top: -6.2em;
+        margin-left: 2.2em;
+    }
+
+    80% {
+        font-size: 2em;
+        opacity: 100%;
+    }
+
+    to {
+        margin-top: -6.25em;
+        margin-left: 2.23em;
+        /* opacity: 0; */
+        font-size: 2em;
+    }
+}
+
+.ship__hp {
+    width: 125px;
+    height: 5.5px;
+    position: relative;
+    background: #000;
+    margin-bottom: 2px;
+}
+
+.ship__hp-line {
+    width: 100%;
+    height: 100%;
+    background: green;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.2s linear;
+}
+
+.ship__sh-line {
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 67, 212);
+    transition: 0.2s linear;
+}
+
+.ship__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0deg);
+}
+
+.ship__below {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ship__warrank {
+    position: relative;
+}
+
+.ship__warrank img {
+    position: absolute;
+    left: -36px;
+    top: -18px;
+}
+
+.ship__nickname {
+    font-size: 1.3em;
+    color: white;
+    letter-spacing: 1.9px;
+}
+
+.ship__bottom {
+    font-size: 0.9em;
+    text-align: center;
+    letter-spacing: 1.2px;
+    color: white;
+}
+
+.hitpoints {
+    margin-bottom: 1px;
+}
+
+#ranks {
+    background: url(../images/icons/ranks.png) no-repeat;
+    height: 32px;
+    width: 20px;
+    position: relative;
+    top: 6px;
+    left: -6px;
+}
+
+#ranks.rank1 {
+    background-position: -140px 0;
+}
+
+#ranks.rank2 {
+    background-position: -180px 0;
+}
+
+#ranks.rank3 {
+    background-position: -60px 0;
+}
+
+#ranks.rank4 {
+    background-position: -120px 0;
+}
+
+#ranks.rank5 {
+    background-position: -220px 0;
+}
+
+#ranks.rank6 {
+    background-position: -20px 0;
+}
+
+#ranks.rank7 {
+    background-position: -80px 0;
+}
+
+#ranks.rank8 {
+    background-position: 0 0;
+}
+
+#ranks.rank9 {
+    background-position: -160px 0;
+}
+
+#ranks.rank10 {
+    background-position: -100px 0;
+}
+
+#ranks.rankO {
+    background-position: -200px 0;
+}
+
+#ranks.rankA {
+    background-position: -40px 0;
+}
+
+
+/* pve */
+
+.pve {
+    position: fixed;
+    left: 100%;
+    top: 6em;
+    margin-left: -140px;
+}
+
+.pve__container {
+    height: 100%;
+    width: 100%;
+}
+
+.pve button {
+    background-color: white;
+    width: 80px;
+    margin: 0 25px;
+}
+
+.pve button:hover {
+    background-color:rgb(255, 72, 0);
+}
+
+.pve__description {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+}
+
+.pve__description-text {
+    color: white;
+    font-size: 1.2em;
+}
+
+.pve__row {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 5px 5px 5px;
+}
+
+.pve__enemies {
+    font-size: 1.3em;
+    color:rgba(45, 117, 96);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.pve__enemy {
+    margin: 3px 0;
+}
+
+.pve__enemy button {
+    padding: 3px;
+    border-radius: 5px;
+}
+
+
+/* information */
+
+.info {
+    position: fixed;
+    left: 100%;
+    top: 100%;
+    margin-left: -90px;
+    margin-top: -34px;
+}
+
+.info button {
+    background-color: rgb(202, 202, 202);
+}
+
+.info button:hover {
+    background-color:rgb(40, 202, 0);
+}
+
+.info button {
+    display: inline-block;
+    margin-bottom: 3px;
+    padding: 4px;
+}
+
+
+.auto {
+    position: fixed;
+    top: 100%;
+    margin-top: -61px;
+    left: 1px;
+}
+
+.auto__button {
+    width: 120px;
+    height: 60px;
+    background: rgb(204, 0, 85);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+    border-radius: 6px;
+    font-size: 18px;
+}
+
+.auto__button-off {
+    background: rgb(0, 79, 182);
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 12px;
+    }
+
+    .profile {
+        width: 320px;
+        margin-left: -320px;
+    }
+
+    .ship__image img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .ship__hp {
+        width: 85px;
+    }
+
+    .ship__nickname {
+        letter-spacing: 1.2px;
+    }
+
+    .menu {
+        grid-template-columns: 2fr 8fr;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        font-size: 10px;
+    }
+
+    .profile {
+        width: 260px;
+        margin-left: -260px;
+    }
+
+    .ship__image img {
+        width: 40%;
+        height: 40%;
+    }
+
+    .ship__hp {
+        width: 75px;
+    }
+
+    .pve {
+        margin-left: -85px;
+    }
+
+    .pve button {
+        margin: 0 0;
+        width: 75px;
+    }
+
+    .menu {
+        grid-template-columns: 2fr 5fr;
+    }
+}
